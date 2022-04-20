@@ -13,8 +13,10 @@ const Expenses = (props) => {
         setFilteredYear(filteredYear);
     }
 
-    const expenseElements = props.expenses.map(expense => 
-            <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}/>
+    const expenseElements = props.expenses
+    .filter(exp1 => exp1.date.getFullYear() === parseInt(filteredYear))
+    .map(expense => 
+            <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date}/>
     );
 
     return (
