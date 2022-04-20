@@ -13,11 +13,9 @@ const Expenses = (props) => {
         setFilteredYear(filteredYear);
     }
 
-    const expenseElements = props.expenses.map(expense => {
-        return (
-            <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}></ExpenseItem>
-        )
-    });
+    const expenseElements = props.expenses.map(expense => 
+            <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date}/>
+    );
 
     return (
         <div className="expenses">
